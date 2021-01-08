@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(href='https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap', rel='stylesheet')
+    link(rel='stylesheet', href='./main.css')
+    script(src="./libs.min.js")
+    block title
+      title Lab2Biz
+  body
+    .wrapper
+      section.hero
+        .hero__welcome.bg_dark
+          .container
+            a.logo(href='./index.html')
+                svg.logo__svg
+                  use(xlink:href='./images/icons/sprite.svg#lab2biz_logo')
+            h1.site-title Разработка сайтов любой сложности
+            a.button.button--blue(href='#') Оставить заявку
+        .hero__promo.bg_light
+          .container
+            .hero__promo-row Только грамотный подход к разработке и продвижению,
+            .hero__promo-row.hero__promo-row--brown Принесет пользу бизнесу!
+      section.advantages.bg_dark
+        .container
+          h2.section-title Преимущества
+          ul.advantages__list
+            li.advantages__item
+              .advantages__item-icon
+                svg.advantages__item-svg
+                    use(xlink:href='./images/icons/sprite.svg#crown')
+              .advantages__item-text Уникальный и современный дизайн
+            li.advantages__item
+              .advantages__item-icon
+                svg.advantages__item-svg
+                    use(xlink:href='./images/icons/sprite.svg#pc-mobile')
+              .advantages__item-text Адаптация под все устройства
+            li.advantages__item
+              .advantages__item-icon
+                svg.advantages__item-svg
+                    use(xlink:href='./images/icons/sprite.svg#seo-friend')
+              .advantages__item-text Оптимизирован под SEO
+            li.advantages__item
+              .advantages__item-icon
+                svg.advantages__item-svg
+                    use(xlink:href='./images/icons/sprite.svg#arrows-down')
+              .advantages__item-text Высокая скорость загрузки
+            li.advantages__item
+              .advantages__item-icon
+                svg.advantages__item-svg
+                    use(xlink:href='./images/icons/sprite.svg#gear-heart')
+              .advantages__item-text Удобство администрирования
+            li.advantages__item
+              .advantages__item-icon
+                svg.advantages__item-svg
+                    use(xlink:href='./images/icons/sprite.svg#circle-arrows')
+              .advantages__item-text Возможность модернизации
+
+
+

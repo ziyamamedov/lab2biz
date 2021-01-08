@@ -1,0 +1,22 @@
+-
+  var items = [
+    {name: 'Главная', link: './index.html'},
+    {name: 'Регистрация в Avon', link: './registration.html'},
+    {name: 'Бизнес', link: '#'},
+    {name: 'Галерея', link: '#'},
+    {name: 'Каталог Avon', link: './catalogue.html'},
+    {name: 'Контакты', link: '#'},
+    {name: 'Статьи', link: '#'},
+    ];
+
+mixin nav(className, items, activeItem)
+  nav(class= `${className}`)
+    ul(class= `${className}__list`)
+      - for (var i = 0; i < items.length; i++)
+          if i == activeItem - 1
+            li(class= `${className}__item`, class = `${className}__item--active`)
+              a(class=`${className}__item-link`, href= items[i].link) #{items[i].name}
+          else
+            li(class= `${className}__item`)
+              a(class=`${className}__item-link`, href= items[i].link) #{items[i].name}
+           

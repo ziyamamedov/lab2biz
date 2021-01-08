@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+  @include desktop {
+    font-size: 14px;
+  }
+
+  @include tablets {
+    font-size: 10px;
+  }
+  @include phones {
+    font-size: 8px;
+  }
+}
+html, body {
+  height: 100%;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+  line-height: 1.42;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+ul, li {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .main {
+    flex: 1;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  width: 95%;
+  max-width: $container-hd;
+
+  @include desktop {
+    max-width: $container-desktop;
+  }
+  @include tablets {
+    max-width: $container-tablets;
+  }
+  @include phones {
+    max-width: $container-phones;
+  }
+}
+
+.bg_dark {
+  background-color: $dark_bg;
+  color: #ffffff;
+}
+.bg_light {
+  background-color: $light_bg;
+  color: #000;
+}
