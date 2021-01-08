@@ -1,3 +1,5 @@
+include ../mixins.pug
+
 <!DOCTYPE html>
 html(lang="en")
   head
@@ -24,7 +26,7 @@ html(lang="en")
             .hero__promo-row.hero__promo-row--brown Принесет пользу бизнесу!
       section.advantages.bg_dark
         .container
-          h2.section-title Преимущества
+          h2.section-title.section-title__centered Преимущества
           ul.advantages__list
             li.advantages__item
               .advantages__item-icon
@@ -56,6 +58,69 @@ html(lang="en")
                 svg.advantages__item-svg
                     use(xlink:href='./images/icons/sprite.svg#circle-arrows')
               .advantages__item-text Возможность модернизации
+      section.startup-tariffs.bg_light
+        .container
+          h2.section-title Start Up
+          +tariffsMixin([
+            {name: 'Легкий старт', content: ['Комм.Предл.', 'Сайт Лендинг'], price: '44 000₽'},
+            {name: 'Быстрый Старт', content: ['Комм.Предл.', 'Сайт Лендинг', 'Разработка Лого', 'Яндекс Директ'], price: '68 000₽'},
+            {name: 'Турбо Старт', content: ['Комм.Предл.', 'Сайт Лендинг', 'Разработка Лого', 'Яндекс Директ', 'FB, instagram'], price: '82 000₽'}
+          ])
 
-
-
+          a.button.button--red(href='#') Обсудить проект
+      section.models.bg_dark
+        .container
+          h2.section-title.section-title--centered Подготовим структуру и напишем текст по модели AIDA или PMPHS
+          .models__aida
+            .models__info
+              h3.models__title Aida
+              ul.models__info
+                li.models__info-row
+                  .models__info-row-title Attention
+                  .models__inforow-text - Захватить внимание
+                li.models__info-row
+                  .models__info-row-title Interest
+                  .models__inforow-text - Создать интерес
+                li.models__info-row
+                  .models__info-row-title Desire
+                  .models__inforow-text - Вызвать желание
+                li.models__info-row
+                  .models__info-row-title Action
+                  .models__inforow-text - Призыв к действию
+            .models__logo
+              +icon('models__logo', '#aida-eye')
+          .models__pmphs
+            .models__info
+              h3.models__title Pmphs
+              ul.models__info
+                li.models__info-row
+                  .models__info-row-title Pain
+                  .models__info-row-text - Боль клиента
+                li.models__info-row
+                  .models__info-row-title More Pain
+                  .models__info-row-text - Усугублуение юоли
+                li.models__info-row
+                  .models__info-row-title Hope
+                  .models__info-row-text - Надежда на решение
+                li.models__info-row
+                  .models__info-row-title Solution
+                  .models__info-row-text - Само решение
+            .models__logo
+              +icon('models__logo', '#pmphs-fire')
+      section.business-tariffs.bg_light
+        h2.section-title Business
+        +tariffsMixin([
+            {name: 'Лендинг', content: ['Структура по модели AIDA или PMPHS', 'HTML', '1 страница', 'Блоки преимуществ, Триггеров, Захвата', 'Галерея, Видео', 'Товары, Услуги, Тарифы до 6 карточек', 'Формы и кнопки связи Онлайн-чат'], price: '44 000₽'},
+            {name: 'Сайт компании', content: ['Структура по модели AIDA или PMPHS', 'CMS', 'До 10 уникальных страниц', 'Блоки преимуществ, Триггеров, Захвата', 'Галерея, Видео', 'Товары, Услуги, Тарифы до 8 страниц', 'Формы и кнопки связи Онлайн-чат', 'Новости, Блог'], price: '120 000₽'},
+            {name: 'Корпоративный портал', content: ['Структура по модели AIDA или PMPHS', 'CMS', 'До 30 уникальных страниц', 'Блоки преимуществ, Триггеров, Захвата', 'Галерея, Видео', 'Товары, Услуги, Тарифы до 15 страниц', 'Формы и кнопки связи Онлайн-чат', 'Новости, Блог', 'CRM'], price: '180 000₽'}
+          ])
+        a.button.button--red(href='#') Обсудить проект
+      section.ecommerce-tariffs.bg_light
+        .container
+          h2.section-title E-Commerce
+          +tariffsMixin([
+              {name: 'Каталог', content: ['Каталог товаров', 'Корзина', 'Личный кабинет', 'Интернет-эквайринг', 'Модуль доставки', 'Заказ в один клик'], price: '200 000₽'},
+              {name: 'Интернет-магазин', content: ['Каталог товаров', 'Корзина', 'Личный кабинет', 'Интернет-эквайринг', 'Модуль доставки', 'Заказ в один клик', 'Акции, скидки'], price: '330 000₽'},
+              {name: 'Онлайн-гипермаркет', content: ['Каталог товаров', 'Корзина', 'Личный кабинет', 'Интернет-эквайринг', 'Модуль доставки', 'Заказ в один клик', 'Акции, скидки', 'Бонусная программа', 'Партнерская программа', 'Фильтры + Поиск', 'Интеграция с сервисами', 'Подключение опциональных функций'], price: '450 000₽'}
+            ])
+            a.button.button--red(href='#') Обсудить проект

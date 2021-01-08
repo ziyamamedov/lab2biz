@@ -9,6 +9,13 @@
     {name: 'Статьи', link: '#'},
     ];
 
+//- -
+//-   var tariffs = [
+//-     {name: 'Легкий старт', content: ['Комм.Предл.', 'Сайт Лендинг'], price: '44 000₽'},
+//-     {name: 'Быстрый Старт', content: ['Комм.Предл.', 'Сайт Лендинг', 'Разработка Лого', 'Яндекс Директ'], price: '65 000₽'},
+//-     {name: 'Турбо Старт', content: ['Комм.Предл.', 'Сайт Лендинг', 'Разработка Лого', 'Яндекс Директ', 'FB, instagram'], price: '82 000₽'}
+//-     ];
+
 mixin nav(className, items, activeItem)
   nav(class= `${className}`)
     ul(class= `${className}__list`)
@@ -19,4 +26,21 @@ mixin nav(className, items, activeItem)
           else
             li(class= `${className}__item`)
               a(class=`${className}__item-link`, href= items[i].link) #{items[i].name}
-           
+
+mixin icon(className, id)
+  svg(class = `${className}-svg`)
+    use(xlink:href= `./images/icons/sprite.svg${id}`)
+
+mixin tariffsMixin(tariffs)
+  ul.tariffs__list
+    - for (var i = 0; i < tariffs.length; i++)
+        li.tariffs__item.tariff
+          h3.tariff__title #{tariffs[i].name}
+          ul.tariff__adv-list
+            - for (var x = 0; x < tariffs[i].content.length; x++)  
+                li.tariff__adv-item
+                  .tariff__adv-icon
+                    +icon('advantages__item', '#check')
+                  .tariff__adv-text #{tariffs[i].content[x]}
+          .tariff__price #{tariffs[i].price}
+
